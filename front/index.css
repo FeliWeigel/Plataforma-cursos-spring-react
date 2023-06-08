@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,500;1,600&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,600;1,700&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+ul, li {
+    list-style: none;
+}
+
+a, button {
+    text-decoration: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* --- Estilos Menu --- */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    color: rgba(255, 255, 255, 0.482);
+    top: 0;
+    width: 100%;
+    height: 4.6rem;
+    padding: 0 20px;
+    box-shadow: 0px 0px 5px 0px rgba(5, 119, 189, 0.352);
+    transition: all .6s;
+    z-index: 10;
+}
+
+.cart-link, .nav-display {
+    color: rgb(0, 167, 222);
+    transition: .4s;
+}
+
+.cart-link:hover, .nav-display:hover {
+    color: #6df1e8;
+}
+
+.nav h3 {
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.877);
+    font-weight: 600;
+    font-size: 2rem;
+    font-style: italic;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    padding: 3rem 4rem;
+    z-index: 20;
+    width: 28%;
+    top: 0;
+    right: -100%;
+    height: 100%;
+    background-color: rgb(1, 1, 45);
+    transition: all .6s;
+}
+
+.nav-menu ul {
+    padding-top: 2rem;
+}
+
+.nav-menu li {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: 1rem;
+    font-size: 1.52rem;
+    color: rgba(255, 255, 255, 0.484);
+    transition: .4s;
+}
+
+.close-btn {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.484);
+    top: 1.5rem;
+    right: 2rem;
+    transition: .4s;
+}
+
+.icon-btn {
+    color: rgba(255, 255, 255, 0.484);
+}
+
+.logout-btn {
+    color: rgba(255, 255, 255, 0.484);
+    font-size: 1.5rem;
+    transition: .4s;
+}
+
+.nav-menu li:hover, .logout-btn:hover, .close-btn:hover {
+    color: white;
+}
+
+/* --- MENU CONTROL --- */
+.open-menu {
+    right: 0;
+}
+
+.hidden-menu {
+    display: none;
+}
+
+.nav-bg {
+    background-color: rgb(2, 0, 27);
+}

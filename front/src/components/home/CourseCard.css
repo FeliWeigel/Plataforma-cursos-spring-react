@@ -1,0 +1,16 @@
+.course-card:hover{
+    transform: scale(1.03);
+}
+
+.course-icon {
+    color:#6df1e8e6;
+}
+
+.course-card h3 {
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+}
+
+.course-card p {
+    color: rgba(255, 255, 255, 0.308);
+}

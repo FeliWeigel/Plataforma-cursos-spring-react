@@ -1,0 +1,40 @@
+.images img {
+    width: 450px;
+    transition: ease-in-out .4s;
+}
+
+.images img:hover {
+    transform: scale(1.05);
+}
+
+.info-img-2 {
+    position: absolute;
+    left: 35%;
+    top: 25%;
+}
+
+.info-texts h3 {
+    color: white;
+    font-size: 1.7rem;
+    font-style: italic;
+    position: relative;
+    margin-bottom: .4rem;
+}
+
+.info-texts h3::before {
+    content: "";
+    width: 30px;
+    height: 2px;
+    background-color: #6df1e8;
+    position: absolute;
+    bottom: 0;
+}
+
+.info-texts h4 {
+    color: rgba(255, 255, 255, 0.525);
+    width: 540px;
+}
+
+.info-texts p {
+    color: rgba(92, 205, 222, 0.404);
+}
