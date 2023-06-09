@@ -1,6 +1,7 @@
 package com.fwdev.coursesplatform.user;
 
 import com.fwdev.coursesplatform.security.jwt.Token;
+import io.swagger.annotations.ApiModelProperty;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -23,6 +24,7 @@ public class User implements UserDetails {
 
     @Id
     @GeneratedValue
+    @ApiModelProperty(hidden = true)
     private Long id;
     private String firstname;
     private String lastname;

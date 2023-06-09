@@ -2,6 +2,7 @@ package com.fwdev.coursesplatform.security.auth;
 
 import com.fwdev.coursesplatform.repository.UserRepository;
 import com.fwdev.coursesplatform.user.User;
+import io.swagger.v3.oas.annotations.Hidden;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +20,7 @@ public class AuthController {
     private final UserRepository userRepository;
 
     @GetMapping("/all_users")
+    @Hidden
     public ResponseEntity<List<User>> getAllUsers(){
         return new ResponseEntity<>( userRepository.findAll(), HttpStatus.OK);
     }
