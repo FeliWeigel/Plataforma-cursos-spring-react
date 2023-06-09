@@ -1,6 +1,6 @@
 spring:
   application:
-    name: tec_ecommerce
+    name: courses_platform
   datasource:
     url: jdbc:postgresql://localhost:5432/tec_ecommerce
     username: postgres

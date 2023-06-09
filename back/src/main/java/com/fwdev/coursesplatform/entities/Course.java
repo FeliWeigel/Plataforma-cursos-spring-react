@@ -12,19 +12,18 @@ import lombok.NoArgsConstructor;
 @Builder
 @Data
 @Entity
-@Table(name = "products")
+@Table(name = "courses")
 @AllArgsConstructor
 @NoArgsConstructor
-public class Product {
+public class Course {
     @Id
     @GeneratedValue
     private Long id;
-    private String model;
-    private String brand;
-    private String color;
-    private String type;
+    private String name;
+    private String description;
+    private String difficult;
     private Double price;
-    private Integer storage;
+    private Integer Duration;
     private String image;
 
 }

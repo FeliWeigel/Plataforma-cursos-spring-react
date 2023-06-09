@@ -4,6 +4,7 @@ import "./Info.css"
 import "../../../index.css"
 import infoImg1 from "../../assets/info1.png"
 import infoImg2 from "../../assets/info2.png"
+import Nav from '../Nav'
 
 const Info = () => {
   return (

@@ -17,6 +17,22 @@ const Nav = () => {
     const [open, setOpen] = useState(false);
     const [colorChange, setColorChange] = useState(false)
 
+    function openMenu(){
+        const nav = document.getElementById("nav")
+        const navMenu = document.getElementById("nav-menu")
+        if(!open){
+            setOpen(true)
+            nav.classList.add("hidden-menu")
+            navMenu.classList.add("open-menu")
+        }else if(open){
+            setOpen(false)
+            nav.classList.remove("hidden-menu");
+            navMenu.classList.remove("open-menu")
+        }
+        console.log(open)
+
+    }
+
     const navChangeColor = () => {
         const nav = document.getElementById('nav')
         
@@ -29,25 +45,10 @@ const Nav = () => {
     }
     window.addEventListener('scroll', navChangeColor)
 
-    function openMenu(){
-        const nav = document.getElementById("nav")
-        const navMenu = document.getElementById("nav-menu")
-        console.log(open)
-        if(!open){
-            setOpen(true)
-            nav.classList.add("hidden-menu")
-            navMenu.classList.add("open-menu")
-        }else if(open){
-            setOpen(false)
-            nav.classList.remove("hidden-menu");
-            navMenu.classList.remove("open-menu")
-        }
-
-    }
     
     return (
         <div>
-            <nav className={colorChange && !open ? 'nav nav-bg' : 'nav'} id='nav'>
+            <nav className={colorChange ? 'nav nav-bg' : 'nav'} id='nav'>
                 <Link to="/cart" className='cart-link'><Icon icon={ic_shopping_cart_outline} size={30}></Icon></Link>
                 <Link to="/"/><h3>IT Training</h3><Link/>
                 <button className='nav-display' onClick={openMenu}><Icon icon={bars} size={28}></Icon></button>

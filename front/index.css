@@ -111,7 +111,7 @@ body {
 }
 
 .hidden-menu {
-    display: none;
+    top: -100%;
 }
 
 .nav-bg {
