@@ -2,7 +2,7 @@ spring:
   application:
     name: courses_platform
   datasource:
-    url: jdbc:postgresql://localhost:5432/tec_ecommerce
+    url: jdbc:postgresql://localhost:5432/courses_platform
     username: postgres
     password: 44791991
     driver-class-name: org.postgresql.Driver

@@ -5,7 +5,6 @@ import Icon from 'react-icons-kit'
 import { Button, Card } from '@mui/material'
 const CourseCard = ({icon}) => {
   
-  console.log(name)
   return (
     <Card variant='outlined' sx={{
       display: 'flex',
