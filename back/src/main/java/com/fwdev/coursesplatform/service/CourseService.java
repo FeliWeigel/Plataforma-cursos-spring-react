@@ -1,8 +1,10 @@
 package com.fwdev.coursesplatform.service;
 
 import com.fwdev.coursesplatform.entities.Course;
+import com.fwdev.coursesplatform.entities.Image;
 import com.fwdev.coursesplatform.exceptions.CourseNotFoundException;
 import com.fwdev.coursesplatform.repository.CourseRepository;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +15,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@Transactional
 @RequiredArgsConstructor
 public class CourseService {
     private final CourseRepository courseRepository;
@@ -51,12 +54,12 @@ public class CourseService {
         return courseRepository.findAll();
     }
 
-    public ResponseEntity<Object> getCourseById(Long courseId){
+    public Optional<Course> getCourseById(Long courseId){
         Optional<Course> course = courseRepository.findById(courseId);
         if(course.isPresent()){
-            return new ResponseEntity<>(courseRepository.findById(courseId), HttpStatus.OK);
+            return courseRepository.findById(courseId);
         }
-        return new ResponseEntity<>(new CourseNotFoundException("Course with id: " + courseId + " not found!"), HttpStatus.NOT_FOUND);
+        return null;
     }
 
 

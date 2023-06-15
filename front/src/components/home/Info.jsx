@@ -7,20 +7,20 @@ import infoImg2 from "../../assets/info2.png"
 
 const Info = () => {
   return (
-    <Container maxWidth="xl" sx={{
+    <Container maxWidth='xl' sx={{
         backgroundColor: 'rgb(2, 0, 20)',
         display: 'flex',
         height: '80vh'
     }}> 
         <Box className='images' sx={{
             position: 'relative',
-            width: '55%',
+            width: '53%',
         }}>
             <img className='info-img-1' src={infoImg1} alt="info img 1" />
             <img className='info-img-2' src={infoImg2} alt="info img 2" />
         </Box>
         <Box className='info-texts' sx={{
-            width: "45%",
+            width: "47%",
             padding: '3rem'
         }}>
             <h3>About online course platform</h3>

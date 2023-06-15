@@ -1,4 +1,5 @@
 .featured-container {
+    width: 100%;
     padding: 3rem 5rem;
     background-image:linear-gradient(rgba(0, 1, 37, 0.557), rgba(0, 2, 48, 0.416)), url("../../assets/bg-featured.png");
     background-repeat: no-repeat;

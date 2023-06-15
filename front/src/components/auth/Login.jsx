@@ -41,13 +41,14 @@ export default class Login extends React.Component{
           error: false,
           isLogged: true
         })
+        localStorage.setItem("access_token", res.data.access_token)
       }
     })
     .catch(err => {
       this.setState({
         error: true,
         isLogged: false,
-        errorMsg: "Error! Check your credentials."
+        errorMsg: "Invalid email or password. Check your credentials!"
       })
 
     })
@@ -56,12 +57,13 @@ export default class Login extends React.Component{
 
   render(){
     return (
-      <Container maxWidth="xl" className='auth-container' sx={{
+      <Container maxWidth="xl" className='auth-container login-container' sx={{
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '100vh'
+        height: '100vh',
+        width: '100%'
       }}>
         <h2>Welcome! Log in to continue exploring.</h2>
             <form className='login-form' onSubmit={this.handleSubmit}>
@@ -80,7 +82,7 @@ export default class Login extends React.Component{
               {!this.state.isLogged && this.state.error ? <Alert severity='error'>{this.state.errorMsg}</Alert> : this.state.isLogged && !this.state.error ? <Navigate to="/"></Navigate> : null}
               
               <Button onClick={this.handleLogin} variant='contained' sx={{
-                width: '150px',
+                width: '100px',
                 margin: '0 auto'
               }}>Log In</Button>
               <Link to="/auth/register" className='to-register-link'>You still do not have an account? Sign up</Link>

@@ -18,7 +18,9 @@ a, button {
 }
 
 body {
+    max-width: 1280px;
     font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
 }
 
 /* --- Estilos Menu --- */

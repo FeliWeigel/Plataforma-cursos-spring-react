@@ -13,7 +13,7 @@ import { Container } from '@mui/material'
 const ExclusiveProducts = () => {
 
   return (
-    <Container maxWidth="xl" className='featured-container'>
+    <Container maxWidth='xl'  className='featured-container'>
       <h2>Featured Courses</h2>
       <div className='featured-cards'>
         <CourseCard icon={socialNodejs} />

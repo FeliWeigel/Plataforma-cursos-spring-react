@@ -59,7 +59,7 @@ export default class Register extends React.Component{
 
   render(){
     return (
-      <Container maxWidth="xl" className='auth-container' sx={{
+      <Container maxWidth="xl" className='auth-container register-container' sx={{
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',

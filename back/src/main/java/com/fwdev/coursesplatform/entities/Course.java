@@ -1,11 +1,8 @@
 package com.fwdev.coursesplatform.entities;
 
-import io.swagger.annotations.ApiModelProperty;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import io.swagger.v3.oas.annotations.Hidden;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,15 +16,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Course {
     @Id
-    @GeneratedValue
-    @Hidden
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String description;
     private String difficult;
     private String type;
     private Double price;
-    private Integer Duration;
-    private String image;
+    private Integer duration;
 
 }

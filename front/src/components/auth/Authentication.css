@@ -1,6 +1,14 @@
-.auth-container {
+.register-container {
     background-image: linear-gradient(rgba(0, 2, 47, 0.557), rgba(0, 2, 56, 0.416)), url("../../assets/register_bg.jpg");
     background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.login-container {
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 2, 47, 0.707), rgba(0, 2, 56, 0.740)), url("../../assets/login_bg.jpg");
+    background-position: right;
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -28,7 +36,7 @@ form {
 }
 
 .login-form {
-    width: 31%;
+    width: 32%;
 }
 
 form h4 {
