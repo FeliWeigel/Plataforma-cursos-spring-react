@@ -20,7 +20,6 @@ const CoursesList = () => {
         }
         axios.get(URL, config)
         .then(res => {
-            console.log(res.data)
             setCourses(res.data)
         })
     }, [])

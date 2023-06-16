@@ -1,7 +1,6 @@
 import axios from "axios"
 import { apiUrlBase } from "./apiUrlBase"
 
-
 export const addCourse = (course) => {
     const URL = apiUrlBase + "courses/add"
         let token = localStorage.getItem("access_token")

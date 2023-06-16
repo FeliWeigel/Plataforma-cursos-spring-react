@@ -1,0 +1,22 @@
+.card-img {
+    width: 100%;
+    height: 40%;
+    transition: .4s;
+    border-bottom: 1px solid rgba(1, 1, 77, 0.279);
+}
+
+.card-img:hover {
+    transform: scale(1.03);
+}
+
+.add-cart-btn {
+    position: absolute;
+    background-color: rgba(4, 142, 110, 0.872);
+    color: white;
+    font-size: .95rem;
+    border-top-left-radius: 13px;
+    font-weight: 600;
+    padding: 5px 8px;
+    bottom: 0;
+    right: 0;
+}

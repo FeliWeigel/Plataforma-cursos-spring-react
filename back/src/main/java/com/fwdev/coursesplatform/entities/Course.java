@@ -24,5 +24,6 @@ public class Course {
     private String type;
     private Double price;
     private Integer duration;
+    private String image;
 
 }

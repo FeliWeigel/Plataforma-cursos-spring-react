@@ -1,7 +1,6 @@
 package com.fwdev.coursesplatform.service;
 
 import com.fwdev.coursesplatform.entities.Course;
-import com.fwdev.coursesplatform.entities.Image;
 import com.fwdev.coursesplatform.exceptions.CourseNotFoundException;
 import com.fwdev.coursesplatform.repository.CourseRepository;
 import jakarta.transaction.Transactional;

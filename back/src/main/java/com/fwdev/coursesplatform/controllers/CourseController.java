@@ -1,18 +1,12 @@
 package com.fwdev.coursesplatform.controllers;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fwdev.coursesplatform.entities.Course;
 import com.fwdev.coursesplatform.service.CourseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.io.IOException;
-import java.sql.Blob;
-import java.sql.SQLException;
 import java.util.List;
 
 @RestController
