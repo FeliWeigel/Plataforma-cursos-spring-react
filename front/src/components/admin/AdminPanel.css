@@ -3,11 +3,35 @@
     box-shadow: 0px 0px 10px rgba(20, 20, 107, 0.74);
 }
 
-.rmv-btn {
+.rmv-btn, .add-btn {
     cursor: pointer;
+    color: #00d2ba74;
     transition: .4s;
 }
 
-.rmv-btn:hover {
-    color: #fff;
+.rmv-btn:hover, .add-btn:hover {
+    color: #06fad5;
+}
+
+.list-item h3{
+    display: flex;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-style: italic;
+    flex-wrap: wrap;
+    width: 32%;
+}
+
+.list-item h4 {
+    width: 18%;
+    font-weight: 600;
+}
+
+.list-item h5 {
+    width: 6%;
+}
+
+.list-item p {
+    width: 8%;
 }

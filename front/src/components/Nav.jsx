@@ -11,11 +11,33 @@ import { priceTags } from 'react-icons-kit/icomoon/priceTags'
 import { cog } from 'react-icons-kit/icomoon/cog'
 import { exit } from 'react-icons-kit/icomoon/exit'
 import { undo2 } from 'react-icons-kit/icomoon/undo2'
+import { apiUrlBase } from '../service/apiUrlBase'
+import axios from 'axios'
 
 const Nav = () => {
 
     const [open, setOpen] = useState(false);
     const [colorChange, setColorChange] = useState(false)
+
+    function logout(){
+        const URL = apiUrlBase + "auth/logout"
+        let token = localStorage.getItem("access_token")
+        const config = {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }
+        axios.get(URL, config)
+        .then(res => {
+            console.log(res.data)
+            localStorage.clear("access_token")
+            localStorage.clear("refresh_token")
+            location.reload()
+        })
+        .catch(err => {
+            throw new Error(err)
+        })
+    }
 
     function openMenu(){
         const nav = document.getElementById("nav")
@@ -29,7 +51,6 @@ const Nav = () => {
             nav.classList.remove("hidden-menu");
             navMenu.classList.remove("open-menu")
         }
-        console.log(open)
 
     }
 
@@ -91,7 +112,7 @@ const Nav = () => {
                     </Link>
                 </ul>
 
-                <button className='logout-btn'><Icon icon={exit} size={28}></Icon> Log Out</button>
+                <button onClick={logout} className='logout-btn'><Icon icon={exit} size={28}></Icon> Log Out</button>
             </nav>
         </div>
     )

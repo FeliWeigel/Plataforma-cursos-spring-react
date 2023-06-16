@@ -11,6 +11,6 @@ export default function DeleteCourse(courseId){
     }
 
     return (
-        <Icon className='rmv-btn' onClick={handleDelete} icon={bin2}>DeleteCourse</Icon>
+        <Icon className='rmv-btn' onClick={handleDelete} size={18} icon={bin2}>DeleteCourse</Icon>
     )
 }

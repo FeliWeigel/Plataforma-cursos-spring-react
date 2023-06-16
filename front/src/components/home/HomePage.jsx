@@ -5,6 +5,7 @@ import { Icon } from "react-icons-kit"
 import { powerOff } from 'react-icons-kit/fa/powerOff'
 import { Box, Button } from '@mui/material'
 import { filesEmpty } from 'react-icons-kit/icomoon/filesEmpty'
+import { Link } from 'react-router-dom'
 
 const HomePage = () => {
   return (
@@ -34,15 +35,20 @@ const HomePage = () => {
               Explore
               <Icon icon={powerOff} size={21}></Icon>
             </Button>
-            <Button variant='outlined' sx={{
-              marginTop: '2rem',
-              transition: '.4s',
-              color: '#fff',
-              backgroundColor: 'rgb(0, 0, 30)',
-              border: '1.3px solid #53ace3',
-              borderRadius: '13px',
-              boxShadow: '0px 0px 4px 0px #1c3580'
-            }} className='home-btn'>
+            <Button 
+              target='_blank' 
+              href='http://localhost:8080/swagger-ui/index.html' variant='outlined' 
+              sx={{
+                marginTop: '2rem',
+                transition: '.4s',
+                color: '#fff',
+                backgroundColor: 'rgb(0, 0, 30)',
+                border: '1.3px solid #53ace3',
+                borderRadius: '13px',
+                boxShadow: '0px 0px 4px 0px #1c3580'
+              }} 
+              className='home-btn'
+            >
               Learn API
               <Icon icon={filesEmpty} size={18}></Icon>
             </Button>
