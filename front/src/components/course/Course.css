@@ -19,4 +19,9 @@
     padding: 5px 8px;
     bottom: 0;
     right: 0;
+    transition: .4s;
+}
+
+.add-cart-btn:hover {
+    background-color: rgba(3, 193, 148, 0.872);
 }

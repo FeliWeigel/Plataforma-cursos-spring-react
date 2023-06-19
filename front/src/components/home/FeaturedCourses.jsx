@@ -1,27 +1,39 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "../../../index.css"
 import "./FeaturedCourses.css"
-import CourseCard from './CourseCard.jsx'
-import { socialNodejs } from 'react-icons-kit/ionicons/socialNodejs'
-import { socialPython } from 'react-icons-kit/ionicons/socialPython'
-import { socialJavascript } from 'react-icons-kit/ionicons/socialJavascript'
-import { socialHtml5 } from 'react-icons-kit/ionicons/socialHtml5'
-import { leaf } from 'react-icons-kit/ionicons/leaf'
-import {socialCss3} from 'react-icons-kit/ionicons/socialCss3'
+import FeaturedCard from './FeaturedCard.jsx'
 import { Container } from '@mui/material'
+import axios from 'axios'
+import { apiUrlBase } from '../../service/apiUrlBase'
 
 const ExclusiveProducts = () => {
 
+  const [featured, setFeatured] = useState([])
+  let token = localStorage.getItem("access_token")
+  const config = {
+      headers: {
+          Authorization: `Bearer ${token}`
+      }
+  }
+  useEffect(() => {
+    const URL = apiUrlBase + "courses/all"
+    let featuredList = new Array()
+    axios.get(URL, config)
+    .then(res => {
+      featuredList = res.data
+      setFeatured(featuredList.slice(0, 6))
+    })
+
+  },[])
   return (
     <Container maxWidth='xl'  className='featured-container'>
       <h2>Featured Courses</h2>
       <div className='featured-cards'>
-        <CourseCard icon={socialNodejs} />
-        <CourseCard icon={socialPython} />
-        <CourseCard icon={socialJavascript} />
-        <CourseCard icon={socialHtml5}/>
-        <CourseCard icon={socialCss3}/>
-        <CourseCard icon={leaf}/>
+        {featured.map(course => {
+          return (
+            <FeaturedCard course={course}/>
+          )
+        })}
       </div>
     </Container>
   )

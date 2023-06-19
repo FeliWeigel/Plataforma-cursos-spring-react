@@ -1,11 +1,11 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "./components/home/Home";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import AdminPanel from "./components/admin/AdminPanel";
 import AddCourse from "./components/admin/courses/AddCourse.jsx";
 import CoursesList from "./components/admin/courses/CoursesList";
-import CourseOffer from "./components/course/CourseOffer";
+import CourseOffer from "./pages/CourseOffer";
+import Home from "./pages/Home"
 
 function App(){
     return(
@@ -17,7 +17,7 @@ function App(){
                 <Route exact path="/admin/dashboard" element={<AdminPanel/>} ></Route>
                 <Route exact path="/admin/add_course" element={<AddCourse/>} ></Route>
                 <Route exact path="/admin/all" element={<CoursesList/>} ></Route>
-                <Route exact path="/courses/offer" element={<CourseOffer/>} ></Route>
+                <Route exact path="/courses/offer" element={<CourseOffer/>}></Route>
             </Routes>
         </div>
     )

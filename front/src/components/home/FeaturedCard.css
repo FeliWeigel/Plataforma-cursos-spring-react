@@ -2,8 +2,13 @@
     transform: scale(1.03);
 }
 
+.course-card {
+    text-align: center;
+}
+
 .course-icon {
     color:#6df1e8e6;
+    margin-bottom: .4rem;
 }
 
 .course-card h3 {

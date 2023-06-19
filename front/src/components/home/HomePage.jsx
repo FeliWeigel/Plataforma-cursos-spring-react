@@ -24,17 +24,19 @@ const HomePage = () => {
             display: 'flex',
             gap: '1rem'
           }}>
-            <Button variant='outlined' sx={{
-              marginTop: '2rem',
-              transition: '.4s',
-              color: 'rgba(94, 201, 255, 0.92)',
-              border: '1.3px solid #53ace3',
-              borderRadius: '13px',
-              boxShadow: '0px 0px 4px 0px #1c3580'
-            }} className='home-btn'>
-              Explore
-              <Icon icon={powerOff} size={21}></Icon>
-            </Button>
+            <Link to="/courses/offer">
+              <Button variant='outlined' sx={{
+                marginTop: '2rem',
+                transition: '.4s',
+                color: 'rgba(94, 201, 255, 0.92)',
+                border: '1.3px solid #53ace3',
+                borderRadius: '13px',
+                boxShadow: '0px 0px 4px 0px #1c3580'
+              }} className='home-btn'>
+                Explore
+                <Icon icon={powerOff} size={21}></Icon>
+              </Button>
+            </Link>
             <Button 
               target='_blank' 
               href='http://localhost:8080/swagger-ui/index.html' variant='outlined' 
