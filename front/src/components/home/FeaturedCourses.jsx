@@ -31,7 +31,7 @@ const ExclusiveProducts = () => {
       <div className='featured-cards'>
         {featured.map(course => {
           return (
-            <FeaturedCard course={course}/>
+            <FeaturedCard key={course.id} course={course}/>
           )
         })}
       </div>

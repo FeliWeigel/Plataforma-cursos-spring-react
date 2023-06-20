@@ -1,0 +1,10 @@
+.preview-link {
+    color: rgba(0, 255, 255, 0.806);
+    padding: 6px;
+    border-radius: 50%;
+    transition: .4s;
+}
+
+.preview-link:hover {
+    transform: translateX(.4rem);
+}

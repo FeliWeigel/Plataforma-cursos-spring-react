@@ -6,7 +6,7 @@ import { FormControl } from '@mui/material'
 import { Link, Navigate } from 'react-router-dom'
 import { apiUrlBase } from '../../service/apiUrlBase'
 import axios from 'axios'
-
+import Home from "../../pages/Home"
 export default class Login extends React.Component{
   state = {
     form: {

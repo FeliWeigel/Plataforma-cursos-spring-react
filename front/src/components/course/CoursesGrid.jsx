@@ -2,6 +2,8 @@ import "../../../index.css"
 import "./Course.css"
 import { Box, Container } from '@mui/material'
 import OfferCard from './OfferCard'
+import { useState } from "react"
+import FilterByType from "../../service/FilterService"
 
 const CoursesGrid = ({courses}) => {
 
@@ -14,9 +16,10 @@ const CoursesGrid = ({courses}) => {
             }}>
                 {courses.map(course => {
                     return (
-                        <OfferCard course={course}/>
+                        <OfferCard key={course.id} course={course}/>
                     )
                 })}
+
             </Box>
 
         </Container>

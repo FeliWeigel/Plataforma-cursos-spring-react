@@ -58,7 +58,6 @@ const Nav = () => {
         }
         axios.get(URL, config)
         .then(res => {
-            console.log(res.data)
             localStorage.clear("access_token")
             localStorage.clear("refresh_token")
             location.reload()
@@ -74,7 +73,6 @@ const Nav = () => {
         if(preview){
             setCartList(sessionCart)
         }
-        console.log(cartList)
     }
 
     function hiddenPreview(){
@@ -87,7 +85,7 @@ const Nav = () => {
             <nav className={colorChange ? 'nav nav-bg' : 'nav'} id='nav'>
                 <Link onMouseLeave={hiddenPreview} onMouseOver={displayPreview} to="/cart" className='cart-link'>
                     <Icon icon={ic_shopping_cart_outline} size={30}></Icon>
-                    {preview && sessionStorage.getItem('cartList') != null ? <CartPreview cartList={cartList}/> : <p id='cart-count'>{sessionStorage.getItem('cartCount')}</p>}
+                    {preview ? <CartPreview cartList={cartList}/> : <p id='cart-count'>{sessionStorage.getItem('cartCount')}</p>}
                 </Link>
                 <Link to="/"><h3>IT Training</h3></Link>
                 <button className='nav-display' onClick={openMenu}><Icon icon={bars} size={28}></Icon></button>

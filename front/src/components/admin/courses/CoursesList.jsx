@@ -41,7 +41,7 @@ const CoursesList = () => {
            <ul>
             {courses.map((course) => {
                 return ( 
-                    <ListItem className='list-item' sx={{
+                    <ListItem key={course.id} className='list-item' sx={{
                         borderBottom: '1px solid rgba(3, 255, 255, 0.387)',
                         color: 'rgb(100, 100, 100, .9)',
                         justifyContent: 'space-between',
