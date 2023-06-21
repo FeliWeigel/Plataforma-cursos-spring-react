@@ -6,8 +6,10 @@ import { powerOff } from 'react-icons-kit/fa/powerOff'
 import { Box, Button } from '@mui/material'
 import { filesEmpty } from 'react-icons-kit/icomoon/filesEmpty'
 import { Link } from 'react-router-dom'
+import { calculateTotal } from '../../utils/calculateTotal'
 
 const HomePage = () => {
+
   return (
     <section className='home-page'>
         

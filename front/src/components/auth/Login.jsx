@@ -7,12 +7,14 @@ import { Link, Navigate } from 'react-router-dom'
 import { apiUrlBase } from '../../service/apiUrlBase'
 import axios from 'axios'
 import Home from "../../pages/Home"
+import LoadingSp from '../LoadingSp'
 export default class Login extends React.Component{
   state = {
     form: {
       email: "",
       password: ""
     },
+    isLoading: false,
     error: false,
     isLogged: false,
     errorMsg: ""
@@ -34,12 +36,16 @@ export default class Login extends React.Component{
 
   handleLogin = () => {
     const URL = apiUrlBase + 'auth/login'
+    this.setState({
+      isLoading: true
+    })
     axios.post(URL, this.state.form)
     .then(res => {
       if(res.data != null){
         this.setState({
           error: false,
-          isLogged: true
+          isLogged: true,
+          isLoading: false
         })
         localStorage.setItem("access_token", res.data.access_token)
       }
@@ -48,7 +54,8 @@ export default class Login extends React.Component{
       this.setState({
         error: true,
         isLogged: false,
-        errorMsg: "Invalid email or password. Check your credentials!"
+        errorMsg: "Invalid email or password. Check your credentials!",
+        isLoading: false
       })
 
     })
@@ -82,9 +89,10 @@ export default class Login extends React.Component{
               {!this.state.isLogged && this.state.error ? <Alert severity='error'>{this.state.errorMsg}</Alert> : this.state.isLogged && !this.state.error ? <Navigate to="/"></Navigate> : null}
               
               <Button onClick={this.handleLogin} variant='contained' sx={{
-                width: '100px',
-                margin: '0 auto'
-              }}>Log In</Button>
+                  width: '100px',
+                  margin: '0 auto'
+                }}> {this.state.isLoading ? <LoadingSp/> : "Log In"}
+              </Button>
               <Link to="/auth/register" className='to-register-link'>You still do not have an account? Sign up</Link>
           </form>
       </Container>

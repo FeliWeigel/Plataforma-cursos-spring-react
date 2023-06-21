@@ -4,6 +4,7 @@ import { Box, Container } from '@mui/material'
 import OfferCard from './OfferCard'
 import { useState } from "react"
 import FilterByType from "../../service/FilterService"
+import { calculateTotal } from "../../utils/calculateTotal"
 
 const CoursesGrid = ({courses}) => {
 

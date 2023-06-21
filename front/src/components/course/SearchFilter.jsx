@@ -51,7 +51,6 @@ const SearchFilter = () => {
   }
 
   useEffect(() => {
-    setIsLoading(true)
     const URL = apiUrlBase + "courses/all"
     let token = localStorage.getItem("access_token")
     const config = {
@@ -59,14 +58,15 @@ const SearchFilter = () => {
             Authorization: `Bearer ${token}`
         }
     }
+    setIsLoading(true)
     axios.get(URL, config)
     .then(res => {
         setCourses(res.data)
         setIsLoading(false)
     })
     .catch(err => {
-        throw new Error(err)
         setIsLoading(false)
+        throw new Error(err)
     })
   }, [])
 

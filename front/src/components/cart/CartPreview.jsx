@@ -5,10 +5,12 @@ import React from 'react'
 import Icon from 'react-icons-kit';
 import { cart } from 'react-icons-kit/icomoon/cart'
 import { Link } from "react-router-dom";
+import { calculateTotal } from "../../utils/calculateTotal";
 
 const CartPreview = ({cartList}) => {
-  
-  let totalAmount = 0;
+  function totalAmount(){
+    return calculateTotal(cartList)
+  }
   return (
     <Box sx={{
       position: 'absolute',
@@ -20,9 +22,8 @@ const CartPreview = ({cartList}) => {
       transition: '.4s',
     }}>
       {cartList != null ? cartList.map(course => {
-          totalAmount += course.price
           return (
-            <ListItem sx={{
+            <ListItem key={course.id} sx={{
               flexDirection: 'column',
               alignItems: 'flex-start',
               borderBottom: '1px solid rgba(1, 222, 222, 0.312)'}}>
@@ -42,7 +43,7 @@ const CartPreview = ({cartList}) => {
             </ListItem>
       }
 
-      <Typography typography={'p'} fontSize={'1.1rem'}>Total: ${totalAmount}</Typography>
+      <Typography typography={'p'} fontSize={'1.1rem'}>Total: ${totalAmount()}</Typography>
     </Box>
   )
 }

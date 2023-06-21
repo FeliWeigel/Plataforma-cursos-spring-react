@@ -34,7 +34,6 @@ body {
   
 #loading-spinner {
     color: aqua;
-    margin-top: 2rem;
     animation: spinner 1.5s linear infinite;
 }
 

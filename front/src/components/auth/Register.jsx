@@ -6,6 +6,7 @@ import { FormControl } from '@mui/material'
 import { Link } from 'react-router-dom'
 import { apiUrlBase } from '../../service/apiUrlBase'
 import axios from 'axios'
+import LoadingSp from '../LoadingSp'
 
 export default class Register extends React.Component{
   state = {
@@ -16,6 +17,7 @@ export default class Register extends React.Component{
       password: "",
       repeatPassword: ""
     },
+    isLoading: false,
     error: false,
     isRegistered: false,
     errorMsg: ""
@@ -37,12 +39,16 @@ export default class Register extends React.Component{
 
   handleRegister = () => {
     const URL = apiUrlBase + 'auth/register'
+    this.setState({
+      isLoading: true
+    })
     axios.post(URL, this.state.form)
     .then(res => {
       if(res.data != null){
         this.setState({
           error: false,
-          isRegistered: true
+          isRegistered: true,
+          isLoading: false
         })
       }
     })
@@ -50,7 +56,8 @@ export default class Register extends React.Component{
       this.setState({
         error: true,
         isRegistered: false,
-        errorMsg: err.response.data.message
+        errorMsg: err.response.data.message,
+        isLoading: false
       })
 
     })
@@ -107,7 +114,7 @@ export default class Register extends React.Component{
               <Button onClick={this.handleRegister} variant='contained' sx={{
                 width: '150px',
                 margin: '0 auto'
-              }}>Register</Button>
+              }}>{this.state.isLoading ? <LoadingSp/> : "Register"}</Button>
               <Link to="/auth/login" className='to-login-link'>Do you have an already account?</Link>
           </form>
       </Container>
