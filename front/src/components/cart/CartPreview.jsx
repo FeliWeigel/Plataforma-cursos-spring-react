@@ -9,7 +9,9 @@ import { calculateTotal } from "../../utils/calculateTotal";
 
 const CartPreview = ({cartList}) => {
   function totalAmount(){
-    return calculateTotal(cartList)
+    if(cartList != null){
+      return calculateTotal(cartList)
+    }
   }
   return (
     <Box sx={{

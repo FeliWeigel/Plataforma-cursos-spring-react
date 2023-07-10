@@ -6,6 +6,7 @@ import AddCourse from "./components/admin/courses/AddCourse.jsx";
 import CoursesList from "./components/admin/courses/CoursesList";
 import CourseOffer from "./pages/CourseOffer";
 import Home from "./pages/Home"
+import Cart from "./pages/Cart";
 
 function App(){
     return(
@@ -18,6 +19,7 @@ function App(){
                 <Route exact path="/admin/add_course" element={<AddCourse/>} ></Route>
                 <Route exact path="/admin/all" element={<CoursesList/>} ></Route>
                 <Route exact path="/courses/offer" element={<CourseOffer/>}></Route>
+                <Route exact path="/shop/cart" element={<Cart/>}></Route>
             </Routes>
         </div>
     )

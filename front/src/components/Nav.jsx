@@ -83,7 +83,7 @@ const Nav = () => {
     return (
         <div>
             <nav className={colorChange ? 'nav nav-bg' : 'nav'} id='nav'>
-                <Link onMouseLeave={hiddenPreview} onMouseOver={displayPreview} to="/cart" className='cart-link'>
+                <Link onMouseLeave={hiddenPreview} onMouseOver={displayPreview} to="/shop/cart" className='cart-link'>
                     <Icon icon={ic_shopping_cart_outline} size={30}></Icon>
                     {preview ? <CartPreview cartList={cartList}/> : <p id='cart-count'>{sessionStorage.getItem('cartCount')}</p>}
                 </Link>
@@ -110,7 +110,7 @@ const Nav = () => {
                             Offer
                         </li>
                     </Link>
-                    <Link to="/courses/cart">
+                    <Link to="/shop/cart">
                         <li onClick={openMenu}>
                             <button className='icon-btn'>
                                 <Icon icon={ic_shopping_cart_outline} size={28}></Icon>
