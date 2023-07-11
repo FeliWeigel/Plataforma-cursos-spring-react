@@ -90,32 +90,35 @@ const SearchFilter = () => {
       height: 'auto',
       backgroundColor: 'rgb(2, 0, 27)'
     }}>
-      
-      {isLoading ? <LoadingSp/> : null}
-      <Typography 
+  
+      <Typography  className='slide-right'
         typography={'h4'} 
         color={'white'} 
         marginBottom={'1rem'}>
         Explore the complete offer of courses!
       </Typography>
       <FormControl>
-        <InputLabel sx={{color: '#fff'}}>Search</InputLabel>
-        <Input onChange={searcher} type='text' sx={{
+        <InputLabel className='slide-right' sx={{color: '#fff'}}>Search</InputLabel>
+        <Input className='slide-left' onChange={searcher} type='text' sx={{
           color: 'white',
           marginBottom: '1.2rem',
           borderBottom: '1px solid white'
         }}></Input>
       </FormControl>
       <Box sx={{display: 'flex', gap: '1.5rem', marginBottom: '1.5rem'}}>
-        <Button variant={ useBackendFilter ? 'contained' : 'outlined' } onClick={filterTypeBackend}>Backend</Button>
-        <Button variant={ useFrontendFilter ? 'contained' : 'outlined' } onClick={filterTypeFrontend}>Frontend</Button>
-        <Button variant={ useWebFilter ? 'contained' : 'outlined' } onClick={filterTypeWeb}>Web Development</Button>
-        <Button variant={ useDbFilter ? 'contained' : 'outlined' } onClick={filterTypeDb}>Databases</Button>
+        <Button className="animation-padding-top" variant={ useBackendFilter ? 'contained' : 'outlined' } onClick={filterTypeBackend}>Backend</Button>
+        <Button className="animation-padding-top" variant={ useFrontendFilter ? 'contained' : 'outlined' } onClick={filterTypeFrontend}>Frontend</Button>
+        <Button className="animation-padding-top" variant={ useWebFilter ? 'contained' : 'outlined' } onClick={filterTypeWeb}>Web Development</Button>
+        <Button className="animation-padding-top" variant={ useDbFilter ? 'contained' : 'outlined' } onClick={filterTypeDb}>Databases</Button>
       </Box>
+      {isLoading ? <LoadingSp/> : null}
       {
         !useBackendFilter && !useFrontendFilter && !useDbFilter && !useWebFilter ? <CoursesGrid courses={results}/> 
-        : useBackendFilter ? <FilterByType courseList={courses} type={'backend'}/> : useFrontendFilter ? <FilterByType courseList={courses} type={'frontend'}/> 
-        : useWebFilter ? <FilterByType courseList={courses} type={'web'}/> : useDbFilter ? <FilterByType courseList={courses} type={'database'}/> : null
+        : useBackendFilter ? <FilterByType courseList={courses} type={'backend'}/> 
+        : useFrontendFilter ? <FilterByType courseList={courses} type={'frontend'}/> 
+        : useWebFilter ? <FilterByType courseList={courses} type={'web'}/> 
+        : useDbFilter ? <FilterByType courseList={courses} type={'database'}/> 
+        : null
       }
     </Container>
   )

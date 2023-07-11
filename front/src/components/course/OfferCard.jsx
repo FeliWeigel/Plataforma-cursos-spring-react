@@ -11,7 +11,7 @@ const OfferCard = ({course}) => {
     }
 
     return (
-        <Card variant='elevation' sx={{
+        <Card className='slide-top' variant='elevation' sx={{
             width: '92%',
             borderRadius: '8px',
             position: 'relative',

@@ -1,0 +1,25 @@
+.footer-title {
+    position: relative;
+}
+
+.footer-title::before {
+    content: "";
+    position: absolute;
+    bottom: -.2rem;
+    width: 32px;
+    height: 2px;
+    background-color: aqua;
+}
+.footer-nav-link {
+    color: #ffffff84;
+    font-size: 1.15rem;
+    transition: .4s;
+}
+
+.footer-nav-link:hover {
+    color: #ffffff;
+}
+
+.footer-nav-icon {
+    margin-right: 10px;
+}

@@ -4,6 +4,7 @@ import FeaturedCourses from '../components/home/FeaturedCourses.jsx'
 import Info from '../components/home/Info'
 import Nav from '../components/Nav'
 import { Navigate } from 'react-router-dom'
+import Footer from '../components/Footer'
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
         <HomePage/>
         <Info/>
         <FeaturedCourses/>
+        <Footer/>
     </div>
   )
 }

@@ -7,7 +7,6 @@ import axios from 'axios'
 import { apiUrlBase } from '../../service/apiUrlBase'
 
 const ExclusiveProducts = () => {
-
   const [featured, setFeatured] = useState([])
   let token = localStorage.getItem("access_token")
   const config = {
@@ -15,6 +14,7 @@ const ExclusiveProducts = () => {
           Authorization: `Bearer ${token}`
       }
   }
+
   useEffect(() => {
     const URL = apiUrlBase + "courses/all"
     let featuredList = new Array()
@@ -25,6 +25,7 @@ const ExclusiveProducts = () => {
     })
 
   },[])
+  
   return (
     <Container maxWidth='xl'  className='featured-container'>
       <h2>Featured Courses</h2>

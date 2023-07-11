@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import "../../index.css"
+import "./Nav.css"
 import { Link } from 'react-router-dom'
 
 import { Icon } from 'react-icons-kit'
@@ -37,8 +38,6 @@ const Nav = () => {
     }
 
     const navChangeColor = () => {
-        const nav = document.getElementById('nav')
-        
         if(window.scrollY > 80){
             setColorChange(true)
         }else {
@@ -118,7 +117,7 @@ const Nav = () => {
                             My Cart
                         </li>
                     </Link>
-                    <Link to="/admin/admin-panel">
+                    <Link to="/admin/all">
                         <li onClick={openMenu}>
                             <button className='icon-btn'>
                                 <Icon icon={cog} size={26}></Icon>
